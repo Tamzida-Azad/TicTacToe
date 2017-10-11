@@ -1,16 +1,37 @@
 <!DOCTYPE html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
 <html>
 
 <head>
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="tictactoe.css">
-  <script type="text/javascript" src="tictactoe.js"></script>
 </head>
 
 <body>
   <div class="container">
     <h2>Tic Tac Toe</h2>
-    <hr></hr>
+    <div class="box">
+      <table class="ticTable">
+        <tbody>
+          <tr>
+            <td id="c1" class="borderBottom borderRight" onclick="game_play(event)"></td>
+            <td id="c2" class="borderBottom borderRight" onclick="game_play(event)"></td>
+            <td id="c3" class="borderBottom" onclick="game_play(event)"></td>
+          </tr>
+          <tr>
+            <td id="c4" class="borderBottom borderRight" onclick="game_play(event)"></td>
+            <td id="c5" class="borderBottom borderRight" onclick="game_play(event)"></td>
+            <td id="c6" class="borderBottom" onclick="game_play(event)"></td>
+          </tr>
+          <tr>
+            <td id="c7" class="borderRight" onclick="game_play(event)"></td>
+            <td id="c8" class="borderRight" onclick="game_play(event)"></td>
+            <td id="c9" onclick="game_play(event)"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="controls">
       <span class="borderBottom">Player One</span>
       <span class="borderBottom">Player Two</span>
@@ -21,33 +42,13 @@
       <div class="times">Won <span class="one_times">0</span> <span class="two_times">0</span> times</div>
       <div class="times">Lost <span class="one_times">0</span> <span class="two_times">0</span> times</div>
       <br/>
-      <div class="statusDiv borderBottom">Game Status</div>
+      <div id= "game_status_html" onclick = "game_play(event)" class="statusDiv borderBottom">Game Status</div>
       <p>New Game</p>
       <!-- Game Status Messages: Game in progress | Player 1 wins | Player 2 wins -->
-      <button>Restart</button>
-    </div>
-    <div class="board">
-      <table class="ticTable">
-        <tbody>
-          <tr>
-            <!--td id="0" onclick="play(event)" class="borderBottom borderRight"></td-->
-            <td id="0" onclick="play(event)" class="borderBottom borderRight"></td>
-            <td id="1" onclick="play(event)" class="borderBottom borderRight"></td>
-            <td id="2" onclick="play(event)" class="borderBottom"></td>
-          </tr>
-          <tr>
-            <td id="3" onclick="play(event)" class="borderBottom borderRight"></td>
-            <td id="4" onclick="play(event)" class="borderBottom borderRight"></td>
-            <td id="5" onclick="play(event)" class="borderBottom"></td>
-          </tr>
-          <tr>
-            <td id="6" onclick="play(event)" class="borderRight"></td>
-            <td id="7" onclick="play(event)" class="borderRight"></td>
-            <td id="8" onclick="play(event)"></td>
-          </tr>
-        </tbody>
-      </table>
+      <button onclick="reset()">Restart</button>
     </div>
   </div>
+  <script type="text/javascript" src="tictactoe.js"></script>
 </body>
+
 </html>
